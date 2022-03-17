@@ -1,0 +1,6 @@
+[submodule "LoRaMeshLoPyConsole"]
+	path = LoRaMeshLoPyConsole
+	url = git@github.com:dntoll/LoRaMeshLoPyConsole.git
+[submodule "LoRaMeshLibrary"]
+	path = LoRaMeshLibrary
+	url = git@github.com:dntoll/LoRaMeshLibrary.git
