@@ -4,3 +4,6 @@
 [submodule "LoRaMeshLibrary"]
 	path = LoRaMeshLibrary
 	url = git@github.com:dntoll/LoRaMeshLibrary.git
+[submodule "ANSIConsole"]
+	path = ANSIConsole
+	url = git@github.com:dntoll/ANSIConsole.git

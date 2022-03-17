@@ -1,4 +1,4 @@
-from LoRaMeshLoPyConsole.ansiconsole.ANSIEscape import ANSIEscape
+from ANSIConsole.ANSIEscape import ANSIEscape
 
 
 class SimTestView:
