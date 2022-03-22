@@ -72,6 +72,8 @@ class SimTestView:
             t = "acc"
         elif message.isFind():
             t = "fin"
+        elif message.isPing():
+            t = "pin"
         else:
             t = "mes"
         

@@ -9,6 +9,21 @@ from time import sleep
 def test_MessageTests():
     Message.test()
 
+
+def test_testSendPing():
+    st = SimTest()
+    st.add(1, 0, 0)
+    st.add(2, 1, 0)
+
+    st.ping(1)
+    st.processUntilSilent(0.3)
+
+    st.assertHasMessage(1, Message.TYPE_PING)
+    st.assertHasMessage(1, Message.TYPE_ACC)
+    st.assertHasMessage(2, Message.TYPE_PING)
+    
+    st.endSim()
+
 def test_testNodeGetsRemoved():
     st = SimTest()
     st.add(1, 0, 0)
@@ -159,3 +174,5 @@ def test_testNodeIsTooFarAway():
     st.assertHasNoMessage(1, Message.TYPE_ACC)
     
     st.endSim()
+
+

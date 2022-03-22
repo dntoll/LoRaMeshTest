@@ -28,7 +28,7 @@ for i in range(numClients):
     x = i // width
     y = i % width
     views[i] = PlotView(x, y, i)
-    socket = SimulatorSocket(i, x, y, 1)
+    socket = SimulatorSocket(i, x, y, 10.0)
     radio.add(i, socket)
     clients.append(PymeshAdapter(views[i], socket, fpi, devNullCallback))
 

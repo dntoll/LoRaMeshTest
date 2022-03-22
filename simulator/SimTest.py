@@ -36,6 +36,9 @@ class SimTest:
 
     def send(self, fromNodeID, to, message):
         self.clients[fromNodeID].sendMessage(to, message)
+    
+    def ping(self, fromNodeID):
+        self.clients[fromNodeID].pingNeighbors()
 
     def endSim(self):
         self.fpi.die()
