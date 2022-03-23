@@ -52,9 +52,12 @@ class SimTest:
             t = "acc"
         elif messageType == Message.TYPE_FIND:
             t = "find"
+        elif messageType == Message.TYPE_PING:
+            t = "ping"
         else:
             t = "message"
         hasMess = self.views[nodeID].hasMessage(messageType)
+
         assert hasMess, "No message on node " + str(nodeID) + " of type " + t
     
     def assertHasNoMessage(self, nodeID, messageType):
@@ -62,9 +65,12 @@ class SimTest:
             t = "acc"
         elif messageType == Message.TYPE_FIND:
             t = "find"
+        elif messageType == Message.TYPE_PING:
+            t = "ping"
         else:
             t = "message"
 
         hasMess = self.views[nodeID].hasMessage(messageType)
+
         assert not hasMess, "No message on node " + str(nodeID) + " of type " + t
         

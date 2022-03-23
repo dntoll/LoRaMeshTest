@@ -35,7 +35,7 @@ for i in range(25):
         nodeCallBack = MeshTestConsole.callback
     x = i//5
     y = i%5
-    socket = SimulatorSocket(i, x, y, 1.1)
+    socket = SimulatorSocket(i, x, y, 1.5)
     radio.add(i, socket)
     clients[i] = PymeshAdapter(views[i], socket, fpi, nodeCallBack)
 
@@ -60,6 +60,10 @@ while True:
     if ch:
         if ch.isnumeric():
             clients[0].sendMessage(int(ch), b"Message")
+        elif ch == "P":
+            clients[0].pingNeighbors()
+        elif ch == "P1":
+            clients[1].pingNeighbors()
         elif ch == "Q":
             break
         elif ch == "S":

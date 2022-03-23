@@ -28,7 +28,7 @@ for i in range(numClients):
     x = i // width
     y = i % width
     views[i] = PlotView(x, y, i)
-    socket = SimulatorSocket(i, x, y, 10.0)
+    socket = SimulatorSocket(i, x, y, 1.0)
     radio.add(i, socket)
     clients.append(PymeshAdapter(views[i], socket, fpi, devNullCallback))
 
@@ -39,7 +39,7 @@ def sendWaitDraw(context, fromNode, toNode, translateX, translateY, mess):
     for i in range(numClients):
         views[i].clear()
     clients[fromNode].sendMessage(toNode, mess)
-    radio.processUntilSilent(secondsOfSilence = 1)
+    radio.processUntilSilent(secondsOfSilence = 0.5)
 
     context.translate(translateX, translateY)
     for i in range(numClients):
@@ -55,8 +55,8 @@ with cairo.SVGSurface("plotView.svg", 800, 800) as surface:
     context.set_source_rgb(0,0,0)
     context.set_line_width(0.04)
 
-    fromNode = 52
-    toNode = 46
+    fromNode = 64
+    toNode = 34
 
     sendWaitDraw(context, fromNode, toNode, 0, 0, b"message")
     sendWaitDraw(context, fromNode, toNode, 10, 0, b"message2")
